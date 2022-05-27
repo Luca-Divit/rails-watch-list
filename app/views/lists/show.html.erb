@@ -2,12 +2,18 @@
   <div class="banner">
     <h1><%= "All the movies in list #{@list.name}" %></h1>
     <p>Here we are going to post all the movies divided in lists</p>
+    <br>
   </div>
-  <div class="container2">
+  <div class="container2 mb-5">
     <ul class="list-unstyled">
       <% @list.movies.each do |movie| %>
       <li><%= movie.title %></li>
+      <br>
       <% end %>
     </ul>
+  </div>
+  <div class="d-flex justify-content-between p-3">
+    <%= link_to "Add bookmark", new_list_bookmark_path, class: "btn btn-primary" %>
+    <%= link_to "Back", root_path, class: "btn btn-primary" %>
   </div>
 </div>

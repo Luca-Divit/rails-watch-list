@@ -1,0 +1,12 @@
+<div class="container p-2 text-center">
+  <div class="banner">
+    <h1>Create new list</h1>
+    <p>Fill the form to create a new list</p>
+  </div>
+  <div class="container2">
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

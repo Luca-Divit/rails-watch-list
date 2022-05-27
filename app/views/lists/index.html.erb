@@ -1,0 +1,14 @@
+<div class="container p-2 text-center">
+  <div class="banner">
+    <h1>All the movies in list</h1>
+    <p>Here we are going to post all the movies divided in lists</p>
+  </div>
+  <div class="container2">
+    <ul class="list-unstyled">
+      <% @list.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+      <% end %>
+    </ul>
+    <%= link_to "Add new list", new_list_path, class: "btn btn-primary" %>
+  </div>
+</div>

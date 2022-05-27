@@ -1,0 +1,13 @@
+<div class="container p-2 text-center">
+  <div class="banner">
+    <h1><%= "All the movies in list #{@list.name}" %></h1>
+    <p>Here we are going to post all the movies divided in lists</p>
+  </div>
+  <div class="container2">
+    <ul class="list-unstyled">
+      <% @list.movies.each do |movie| %>
+      <li><%= movie.title %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

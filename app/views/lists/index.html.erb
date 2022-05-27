@@ -1,14 +1,15 @@
-<div class="container p-2 text-center">
-  <div class="banner">
-    <h1>All the movies in list</h1>
-    <p>Here we are going to post all the movies divided in lists</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1517845732/1517845731.jpg);">
+  <div class="container">
+    <h1>All the <strong>movies</strong> in list !</h1>
+    <p>Here we are going to post all the movies divided in lists.</p>
+    <%= link_to "Add new list", new_list_path, class: "btn btn-secondary" %>
   </div>
-  <div class="container2">
-    <ul class="list-unstyled">
-      <% @list.each do |list| %>
-      <li><%= link_to list.name, list_path(list) %></li>
-      <% end %>
-    </ul>
-    <%= link_to "Add new list", new_list_path, class: "btn btn-primary" %>
-  </div>
+</div>
+
+<div class="cards p-1">
+  <% @list.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/seed/picsum/180/300)">
+      <%= link_to list.name, list_path(list), class: "link-white" %>
+    </div>
+  <% end %>
 </div>

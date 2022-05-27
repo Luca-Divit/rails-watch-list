@@ -1,15 +1,13 @@
-<div class="container p-2 text-center">
-  <div class="banner">
-    <h1>Create new list</h1>
-    <p>Fill the form to create a new list</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1517845732/1517845731.jpg);">
+  <div class="container">
+      <h1>Create new list</h1>
+      <p>Fill the form to create a new list.</p>
   </div>
-  <div class="container2">
+</div>
+  <div class="container">
     <%= simple_form_for @list do |f| %>
       <%= f.input :name %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn btn-secondary" %>
     <% end %>
-  </div>
-  <div class="text-end p-3">
-    <%= link_to "Back", root_path, class: "btn btn-primary" %>
   </div>
 </div>

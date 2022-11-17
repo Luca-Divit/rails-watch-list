@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @names = List.all.first(3).map(&:name)
   end
 
   def new

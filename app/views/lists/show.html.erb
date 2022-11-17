@@ -2,7 +2,9 @@
   <div class="container">
     <h1><%= "All the movies in list #{@list.name}" %></h1>
     <p>Here we are going to post all the movies divided in lists.</p>
-    <%= link_to "Add bookmark", new_list_bookmark_path(@list), class: "btn btn-secondary" %>
+    <% unless @names.include?(@list.name) %>
+      <%= link_to "Add bookmark", new_list_bookmark_path(@list), class: "btn btn-secondary" %>
+    <% end %>
   </div>
 </div>
 
@@ -14,7 +16,14 @@
         <div class="card-product-infos">
           <h2><%= movie.title %></h2>
           <p><%= movie.overview %></p>
-          <p><%= movie.rating %></p>
+          <p><%= movie.rating %>
+            <% unless @names.include?(@list.name) %>
+              <%= link_to '🗑 << Bookmark',
+                bookmark_path(Bookmark.find_by(movie_id: movie, list_id: params[:id])),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+              %>
+            <% end %>
+          </p>
         </div>
       </div>
     </div>

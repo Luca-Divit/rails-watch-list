@@ -37,6 +37,10 @@
   grid-gap: 16px;
 }
 
+.card--hover:hover {
+  scale: 1.03;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

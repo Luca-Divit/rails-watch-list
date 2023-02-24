@@ -6,14 +6,16 @@
   </div>
 </div>
 
-<div class="cards p-1">
+<div class="cards p-1 my-3 mx-2">
   <% @list.each do |list| %>
-  <% if list.photo.attached? %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-  <% else %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/seed/picsum/180/300)">
-  <% end %>
-      <%= link_to list.name, list_path(list), class: "link-white" %>
-    </div>
+    <%= link_to list_path(list), style:"text-decoration: none;" do %>
+      <% if list.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/seed/picsum/180/300)">
+      <% end %>
+        <p><%= list.name %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>

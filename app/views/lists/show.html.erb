@@ -17,7 +17,7 @@
       <div class="card-product">
         <img src="<%= movie.poster_url %>" />
         <div class="card-product-infos">
-          <h2><%= movie.title %></h2>
+          <h2><%= movie.title.truncate(42) %></h2>
           <p><%= movie.overview.truncate(145) %></p>
           <div class="d-flex justify-content-between align-items-center">
           <p>Rating: <%= '⭐️' * (movie.rating / 2).round  %></p>

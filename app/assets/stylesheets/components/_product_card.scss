@@ -37,6 +37,10 @@
   grid-gap: 16px;
 }
 
+.card--hover {
+  transition: all .3s;
+}
+
 .card--hover:hover {
   scale: 1.03;
   cursor: pointer;

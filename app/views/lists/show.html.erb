@@ -18,17 +18,15 @@
         <img src="<%= movie.poster_url %>" />
         <div class="card-product-infos">
           <h2><%= movie.title %></h2>
-          <p><%= movie.overview.truncate(190) %></p>
+          <p><%= movie.overview.truncate(145) %></p>
           <div class="d-flex justify-content-between align-items-center">
           <p>Rating: <%= '⭐️' * (movie.rating / 2).round  %></p>
             <p>
-            <% unless @names.include?(@list.name) %>
-              <%= link_to '🗑',
-                bookmark_path(Bookmark.find_by(movie_id: movie, list_id: params[:id])),
-                class: 'btn',
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
-            <% end %>
+            <%= link_to '🗑',
+              bookmark_path(Bookmark.find_by(movie_id: movie, list_id: params[:id])),
+              class: 'btn',
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
             </p>
           </div>
         </div>
